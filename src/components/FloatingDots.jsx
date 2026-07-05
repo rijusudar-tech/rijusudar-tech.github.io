@@ -19,7 +19,7 @@ const COLORS = [
   'rgba(154, 132, 224, 0.5)',
 ]
 
-export default function FloatingDots({ count = 70 }) {
+export default function FloatingDots({ count = 160 }) {
   const dots = useMemo(() => {
     const rand = mulberry32(2026)
     return Array.from({ length: count }, (_, i) => {
