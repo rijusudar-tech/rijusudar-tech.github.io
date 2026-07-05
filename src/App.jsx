@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import Sidebar from './components/Sidebar'
+import FloatingDots from './components/FloatingDots'
 import Hero from './components/Hero'
 import About from './components/About'
 import Skills from './components/Skills'
@@ -40,6 +41,7 @@ export default function App() {
 
   return (
     <>
+      <FloatingDots />
       <Sidebar active={active} onNavigate={navigate} onOpenProject={openProject} />
       <main className="main-col">
         <div className="inner">

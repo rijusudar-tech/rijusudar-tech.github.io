@@ -79,6 +79,37 @@ section {
 .main-col {
   margin-left: 348px;
   padding: 0 clamp(24px, 4vw, 72px);
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- floating dots ---------- */
+.dots-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.fdot {
+  position: absolute;
+  border-radius: 50%;
+  animation-name: fdot-float;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes fdot-float {
+  0%, 100% {
+    transform: translate(0, 0);
+    opacity: 0.25;
+  }
+  50% {
+    transform: translate(var(--sway, 6px), var(--drift, -14px));
+    opacity: 1;
+  }
 }
 
 .inner {
@@ -1294,7 +1325,8 @@ section {
   }
   .explore .arr,
   .globe-wire,
-  .cw-caret {
+  .cw-caret,
+  .fdot {
     animation: none !important;
   }
   .book,
