@@ -12,15 +12,19 @@ function mulberry32(seed) {
 }
 
 const COLORS = [
-  'rgba(113, 113, 122, 0.5)',
+  'rgba(154, 132, 224, 0.55)',
   'rgba(124, 107, 184, 0.5)',
-  'rgba(82, 82, 91, 0.38)',
-  'rgba(154, 132, 224, 0.45)',
-  'rgba(113, 113, 122, 0.32)',
-  'rgba(232, 103, 74, 0.26)',
+  'rgba(232, 103, 74, 0.42)',
+  'rgba(236, 72, 153, 0.38)',
+  'rgba(133, 183, 235, 0.55)',
+  'rgba(93, 202, 165, 0.5)',
+  'rgba(244, 191, 79, 0.5)',
+  'rgba(113, 113, 122, 0.4)',
+  'rgba(175, 169, 236, 0.6)',
+  'rgba(240, 153, 123, 0.45)',
 ]
 
-export default function FloatingDots({ count = 150, sparkles = 12 }) {
+export default function FloatingDots({ count = 240, sparkles = 18 }) {
   const items = useMemo(() => {
     const rand = mulberry32(2026)
     const dots = Array.from({ length: count }, (_, i) => {
